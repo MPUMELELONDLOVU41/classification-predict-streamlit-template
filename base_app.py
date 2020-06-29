@@ -27,6 +27,7 @@ import joblib,os
 
 # Data dependencies
 import pandas as pd
+from PIL import Image
 
 # Vectorizer
 news_vectorizer = open("resources/TfidfVec.pkl","rb")
@@ -110,6 +111,12 @@ def main():
 		# You can read a markdown file from supporting resources folder
 		eda_file = open("resources/EDA.md","r",)
 		st.markdown(eda_file.read())
+		image = Image.open('resources/imgs/sentiments.png')
+		st.image(image, caption='Sentiments',use_column_width=True)
+		image = Image.open('resources/imgs/common.png')
+		st.image(image, caption='Sentiments',use_column_width=True)
+		image = Image.open('resources/imgs/wordcloud.png')
+		st.image(image, caption='Sentiments',use_column_width=True)
 
 		st.subheader("Raw Twitter data and label")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
