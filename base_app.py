@@ -79,25 +79,25 @@ def main():
 			vect_text = tweet_cv.transform([tweet_text]).toarray()
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/Logistic_regression.pkl"),"rb"))
-			prediction = predictor.predict(vect_text)
+			# predictor = joblib.load(open(os.path.join("resources/Logistic_regression.pkl"),"rb"))
+			# prediction = predictor.predict(vect_text)
 
 			
-			# if models == "Logistic Regression":
-			# 	predictor = joblib.load(open(os.path.join("resources/log_reg.pkl"),"rb"))
-			# 	prediction = predictor.predict(vect_text)
+			if models == "Logistic Regression":
+				predictor = joblib.load(open(os.path.join("resources/log_reg.pkl"),"rb"))
+				prediction = predictor.predict(vect_text)
 
-			# if models == "Linear SVC":
-			# 	predictor = joblib.load(open(os.path.join("resources/svc.pkl"),"rb"))
-			# 	prediction = predictor.predict(vect_text)
+			if models == "Linear SVC":
+				predictor = joblib.load(open(os.path.join("resources/svc.pkl"),"rb"))
+				prediction = predictor.predict(vect_text)
 
-			# if models == "Naive Bayes":
-			# 	predictor = joblib.load(open(os.path.join("resources/bayes.pkl"),"rb"))
-			# 	prediction = predictor.predict(vect_text)
+			if models == "Naive Bayes":
+				predictor = joblib.load(open(os.path.join("resources/bayes.pkl"),"rb"))
+				prediction = predictor.predict(vect_text)
 
-			# if models == "Random Forest":
-			# 	predictor = joblib.load(open(os.path.join("resources/forest.pkl"),"rb"))
-			# 	prediction = predictor.predict(vect_text)
+			if models == "Random Forest":
+				predictor = joblib.load(open(os.path.join("resources/forest.pkl"),"rb"))
+				prediction = predictor.predict(vect_text)
 
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
